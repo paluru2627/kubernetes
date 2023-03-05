@@ -5,15 +5,17 @@ metadata:
 spec:
   replicas: 6
   selector:
-    app: mynginx
+    app: myjavaapp
+    version: 2.6.1
   template:
     metadata:
       
       labels:
-        app: mynginx
+        app: myjavaapp
+        version: 2.6.1
     spec:
       containers:
-        - name: mycontainer
-          image: nginx
+        - name: myjavacontainer
+          image: maha4iac/myonlinebooking:1
           ports:
-            - containerPort: 80
+            - containerPort: 8080
